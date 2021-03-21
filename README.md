@@ -26,7 +26,9 @@ public class PointST<Value> {
     public Point2D nearest(Point2D p)
     // unit testing (required)
     public static void main(String[] args)
+    
 }
+
 Implementation requirements:  You must use RedBlackBST.java (uploaded on Blackboard); do not implement your own red–black BST.
 Corner cases: Throw an IllegalArgumentException if any argument is null.
 Unit testing:  Your main() method must call each public constructor and method directly and help verify that they work as prescribed (e.g., by printing results to standard output).
