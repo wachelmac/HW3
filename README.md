@@ -5,6 +5,7 @@ BRUTE FORCE IMPLEMENTATION
 Write a mutable data type PointST.java that uses a red–black BST to represent a symbol table whose keys are two-dimensional points, by implementing the following API:
 
 public class PointST<Value> {
+    
     // construct an empty symbol table of points 
     public PointST()
     // is the symbol table empty? 
