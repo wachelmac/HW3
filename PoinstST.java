@@ -37,7 +37,7 @@ public class PointST<Value>{
     
     //all points in the symbol table
     public Iterable<Point2D> points(){
-        return points();
+        return table.keys();
     }
     
     //all points that are inside or on the boundary of the rectangle 
