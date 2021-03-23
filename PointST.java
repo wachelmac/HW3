@@ -2,10 +2,10 @@
 //George O'Malley
 //Group 7
 
-public class KdTreeST {
+public class PointST {
     
-        //construct an empty symbol table of points
-    public KdTreeST(){
+    //construct an empty symbol table of points
+    public PointST(){
         
     }
     
@@ -49,5 +49,4 @@ public class KdTreeST {
     public Point2D nearest (Point2D p) {
         return p; 
     }
-    
 }
