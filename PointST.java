@@ -3,7 +3,8 @@
 //Group 7
 
 public class PointST {
-    
+    // what member variables does this class have??
+	
     //construct an empty symbol table of points
     public PointST(){
         
@@ -22,17 +23,19 @@ public class PointST {
     /*
     //associate the value val with point p
     public void put(Point2D p, Value val){
-        
+    	if (p == null) throw new IllegalArgumentException("called put() with null argument p");
+    	if (val == null) throw new IllegalArgumentException("called put() with null argument val");
     }
     
     //return value associated with point p
     public Value get(Point2D p){
-       
+    	if (p == null) throw new IllegalArgumentException("called get() with null argument");
     }
     */
     
     //returns true if the symbol table contains point p
     public boolean contains(Point2D p){
+    	if (p == null) throw new IllegalArgumentException("called contains() with null argument");
         return true;
     }
     
@@ -47,6 +50,7 @@ public class PointST {
     */
     //returns nearest neighbor of point p or null if the symbol table is empty
     public Point2D nearest (Point2D p) {
+    	if (p == null) throw new IllegalArgumentException("called nearest() with null argument");
         return p; 
     }
 }
