@@ -4,7 +4,7 @@
 
 public class PointST<Value>{
     
-    RedBlackBST table=new RedBlackBST();
+    private RedBlackBST table=new RedBlackBST();
     
     //construct an empty symbol table of points
     public PointST(){  
@@ -60,8 +60,13 @@ public class PointST<Value>{
         return range(rect);
     }
     
-    //turns nearest neighbor of point p or null if the symbol table is empty
+    //returns nearest neighbor of point p or null if the symbol table is empty
     public Point2D nearest (Point2D p) {
-        return p; 
+    	if (p == null) throw new NullPointerException("PointST: nearest() can't have null arg");
+    	Point2D nearest = (Point2D) table.max();
+    	for (Point2D point : points()) {
+    		if (p.distanceSquaredTo(point) < p.distanceSquaredTo(nearest)) nearest = point;
+    	}
+    	return nearest;
     }
 }
