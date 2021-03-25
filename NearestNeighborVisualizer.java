@@ -12,7 +12,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
  
 public class NearestNeighborVisualizer {
     public static void main(String[] args) throws FileNotFoundException {
-        File myFile = new File("input1M.txt");
+        File myFile = new File("input10.txt");
         Scanner input = new Scanner(myFile);
  
         // initialize the two data structures with point from file
@@ -20,7 +20,10 @@ public class NearestNeighborVisualizer {
         KdTreeST<Integer> kdtree = new KdTreeST<Integer>();
         for (int i = 0; input.hasNextLine(); i++) {
             double x = input.nextDouble();
+            System.out.printf("[" + i + "] x: "+ "%.3f", x);
             double y = input.nextDouble();
+            System.out.printf(" \t y: " + "%.3f", y);
+            System.out.println();
             Point2D p = new Point2D(x, y);
             kdtree.put(p, i);
             brute.put(p, i);
@@ -56,6 +59,8 @@ public class NearestNeighborVisualizer {
             if (kdtreeNearest != null) kdtreeNearest.draw();
             Draw.show();
             Draw.pause(20);
+            
+            // how do we get all of the points in a query rectangle?
         }
     }
 }
