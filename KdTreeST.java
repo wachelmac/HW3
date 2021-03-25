@@ -22,6 +22,7 @@ public class KdTreeST <T> {
     public KdTreeST(){
     	size = 0;
     	map = new TreeMap<Point2D, Integer>();
+    	root = new Node();
         
     }
     
@@ -92,16 +93,28 @@ public class KdTreeST <T> {
     }
     
     //returns nearest neighbor of point p or null if the symbol table is empty
-    public Point2D nearest (Point2D p) {
-    	if (p == null) throw new NullPointerException("nearest(): arguments may not be null");
+    public Point2D nearest (Point2D point) {
+    	if (point == null) throw new NullPointerException("nearest(): arguments may not be null");
     	
-        return nearest(p, root, root.p); 
+        return nearest(point, root, root.p); 
     }
     
     // helper function for nearest
     private Point2D nearest(Point2D p, Node n, Point2D point) {
     	if (n == null) return point; // should this return null??
-    	if (n.rect.distanceSquaredTo(p) > point.distanceSquaredTo(p)) return point;
+    	if (n.rect.distanceSquaredTo(p) > point.distanceSquaredTo(p)) return point; // n.rect is null... how??
+    	if (p.distanceSquaredTo(n.p)< p.distanceSquaredTo((point))) point = n.p;
+    	
+    	if (n.leftBottom != null && n.leftBottom.rect.contains(p)) { // this will move us towards the point
+    		// do this function recursively
+    		point = nearest(p, n.leftBottom, point);
+    		point = nearest(p, n.rightTop, point);
+    	}
+    	else { // do above if statement in reverse order, if leftBottom is null or leftBottom.rect does not contain p
+    		point = nearest(p, n.rightTop, point);
+    		point = nearest(p, n.leftBottom, point);
+    	}
+    	return point;
     	
     }
     
