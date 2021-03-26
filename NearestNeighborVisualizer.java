@@ -77,7 +77,7 @@ public class NearestNeighborVisualizer {
 
 	}
 
-
+	// returns an arraylist with all the points inside the rectangle
 	private static ArrayList<Point2D> getRectPts(double xmin, double ymin, double xmax, double ymax) {
 		myRect = new RectHV(xmin, ymin, xmax, ymax);
 		myRect.draw();
