@@ -1,11 +1,11 @@
 /* *****************************************************************************
- *  Name:     
+ *  Name:               George O'Malley
  *  NetID:     
  *
- *  Partner Name:       
+ *  Partner Name:       Rachel MacMullan
  *  Partner NetID:          
  *
- *  Hours to complete assignment (optional):
+ *  Hours to complete assignment (optional): too many lol
  *
  **************************************************************************** */
 
